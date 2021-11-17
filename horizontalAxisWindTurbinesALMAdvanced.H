@@ -208,7 +208,7 @@ private:
 
             vector EVMSampDir;
             point EVMPoint;
-            label EVMcellID;
+            label EVMCellID;
 
             //- List of the method to define blade related search cells.
             DynamicList<word> bladeSearchCellMethod;

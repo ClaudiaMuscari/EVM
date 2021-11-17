@@ -235,7 +235,7 @@ horizontalAxisWindTurbinesALMAdvanced::horizontalAxisWindTurbinesALMAdvanced
             EVMlength=readScalar(turbineArrayProperties.subDict(turbineName[0]).lookup("length"));   
             EVMdist=readScalar(turbineArrayProperties.subDict(turbineName[0]).lookup("dist"));  
             meshDim=readScalar(turbineArrayProperties.subDict(turbineName[0]).lookup("meshDim"));  
-            numEVMPoints=int(readScalar(EVMsetting.subDict(turbineName[0]).lookup("numEVMPoints")));
+            numEVMPoints=int(readScalar(turbineArrayProperties.subDict(turbineName[0]).lookup("numEVMPoints")));
         }
 
         bladeSearchCellMethod.append(word(turbineArrayProperties.subDict(turbineName[i]).lookup("bladeSearchCellMethod")));
@@ -746,7 +746,6 @@ horizontalAxisWindTurbinesALMAdvanced::horizontalAxisWindTurbinesALMAdvanced
         // interpolate blade properties to these points.
         bladePoints.append(List<List<vector> >(NumBl[j], List<vector>(numBladePoints[i],vector::zero)));
         bladeSamplePoints.append(List<List<vector> >(NumBl[j], List<vector>(numBladePoints[i],vector::zero)));
-        EVMSamplePoints.append(List<List<List<vector> > >(NumBl[j], List<List<vector> >(numBladePoints[i], List<vector>(numEVMPoints,vector::zero))));
         bladePointRadius.append(List<List<scalar> >(NumBl[j], List<scalar>(numBladePoints[i],0.0)));
         bladePointChord.append(List<List<scalar> >(NumBl[j], List<scalar>(numBladePoints[i],0.0)));
         bladePointTwist.append(List<List<scalar> >(NumBl[j], List<scalar>(numBladePoints[i],0.0)));
